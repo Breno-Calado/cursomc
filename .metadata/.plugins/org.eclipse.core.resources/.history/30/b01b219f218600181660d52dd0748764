@@ -14,16 +14,17 @@ import br.com.cursomc.domain.Categoria;
 public class CategoriaResource {
 
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Categoria> listar() {
+	public String listar() {
 		
 		Categoria cat1 = new Categoria(1, "informática");
 		Categoria cat2 = new Categoria(2, "escritório");
 		
 		List<Categoria> listar = new ArrayList<>();
-		listar.add(cat1);
-		listar.add(cat2);
 		
-		return listar;
+		listar.add(cat1);
+		listar.add(cat1);
+		
+		return "Rest esta funcionando!";
 	}
 
 }
