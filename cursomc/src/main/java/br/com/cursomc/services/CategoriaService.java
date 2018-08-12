@@ -12,7 +12,9 @@ import br.com.cursomc.domain.Categoria;
 public class CategoriaService {
 
 	@Autowired
-	CategoriaDAO categoriaDAO;
+	private CategoriaDAO categoriaDAO;
+
+	// Método de busca para quem esta usando o spring 2.x.x
 
 	public Categoria buscar(Integer id) {
 		Optional<Categoria> obj = categoriaDAO.findById(id);

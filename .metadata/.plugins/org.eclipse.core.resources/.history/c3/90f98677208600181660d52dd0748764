@@ -1,8 +1,0 @@
-package br.com.cursomc.domain;
-
-public class Categoria {
-	
-	private Integer id;
-	private String name;
-
-}
