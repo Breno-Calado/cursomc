@@ -1,0 +1,18 @@
+package br.com.cursomc.domain;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.cursomc.domain.enums.TipoCliente;
+
+public class Cliente {
+	
+	private Integer id;
+	private String name; 
+	private String email;
+	private String cpfOuCnpj;
+	private TipoCliente tipo;
+	
+	private List<Endereco> enderecos = new ArrayList<>();
+
+}
