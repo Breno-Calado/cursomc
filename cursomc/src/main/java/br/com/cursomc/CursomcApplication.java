@@ -10,6 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.com.cursomc.dao.CategoriaDAO;
 import br.com.cursomc.dao.CidadeDAO;
+import br.com.cursomc.dao.ClienteDAO;
+import br.com.cursomc.dao.EnderecoDAO;
 import br.com.cursomc.dao.EstadoDAO;
 import br.com.cursomc.dao.ProdutoDAO;
 import br.com.cursomc.domain.Categoria;
@@ -34,7 +36,13 @@ public class CursomcApplication implements CommandLineRunner {
 
 	@Autowired
 	private CidadeDAO cidadeDAO;
-
+	
+	@Autowired
+	private ClienteDAO clienteDAO;
+	
+	@Autowired
+	private EnderecoDAO enderecoDAO;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
 	}
@@ -79,5 +87,8 @@ public class CursomcApplication implements CommandLineRunner {
 		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", cli1, c2);
 		
 		cli1.getEnderecos().addAll(Arrays.asList(e1,e2));
+		
+		clienteDAO.saveAll(Arrays.asList(cli1));
+		enderecoDAO.saveAll(Arrays.asList(e1,e2));
 	}
 }
